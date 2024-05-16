@@ -1,0 +1,27 @@
+name: Run tests
+
+on:
+  workflow_call:
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.0
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'oracle'
+
+      - name: Run Lint
+        run: ./gradlew testDebugUnitTest
+        continue-on-error: false
+
+      - name: Upload unit test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit_test_report
+          path: app/build/reports/tests/testDebugUnitTest/

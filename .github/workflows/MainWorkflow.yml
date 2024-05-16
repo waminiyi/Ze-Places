@@ -1,0 +1,25 @@
+name: Push / Pull request build
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+  code-structure-with-lint-checks:
+    name: Check code structure with lint
+    uses: ./.github/workflows/code_structure.yml
+
+  code-smells-with-detekt:
+    name: Check code smell with detekt
+    uses: ./.github/workflows/code_smells.yml
+
+  tests:
+    name: Run tests
+    uses: ./.github/workflows/tests.yml
+
+  build:
+    name: Build the app
+    needs: [code-structure-with-lint-checks, code-smells-with-detekt, tests]
+    uses: ./.github/workflows/build.yml
