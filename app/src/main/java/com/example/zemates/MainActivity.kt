@@ -13,6 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.zemates.ui.theme.ZeMatesTheme
 
+/**
+ * The main activity of the Ze'Mates app.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Suppress("UndocumentedPublicFunction")
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -38,6 +42,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
+@Suppress("UndocumentedPublicFunction")
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
