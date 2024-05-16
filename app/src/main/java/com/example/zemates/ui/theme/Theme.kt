@@ -33,6 +33,7 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+@Suppress("UndocumentedPublicFunction")
 @Composable
 fun ZeMatesTheme(
         darkTheme: Boolean = isSystemInDarkTheme(),
