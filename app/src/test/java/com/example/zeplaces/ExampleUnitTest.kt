@@ -1,4 +1,4 @@
-package com.example.zemates
+package com.example.zeplaces
 
 import org.junit.Test
 

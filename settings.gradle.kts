@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ZeMates"
+rootProject.name = "ZePlaces"
 include(":app")
  
