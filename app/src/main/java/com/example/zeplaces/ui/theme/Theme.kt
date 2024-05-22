@@ -1,4 +1,4 @@
-package com.example.zeplaces.ui.theme
+package com.waminiyi.zeplaces.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

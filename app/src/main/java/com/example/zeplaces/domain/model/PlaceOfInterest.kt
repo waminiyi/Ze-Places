@@ -1,4 +1,4 @@
-package com.example.zeplaces.domain.model
+package com.waminiyi.zeplaces.domain.model
 
 /**
  * Represents a place of interest with various details such as name, rating, location, etc.

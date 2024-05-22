@@ -1,7 +1,7 @@
-package com.example.zeplaces.domain.repositories
+package com.waminiyi.zeplaces.domain.repositories
 
-import com.example.zeplaces.domain.model.PlaceOfInterest
-import com.example.zeplaces.domain.model.PlaceType
+import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
+import com.waminiyi.zeplaces.domain.model.PlaceType
 
 /**
  * Interface representing a repository for managing places of interest.

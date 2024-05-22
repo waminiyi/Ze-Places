@@ -2,14 +2,15 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.devtools.ksp)
 }
 
 android {
-    namespace = "com.example.zeplaces"
+    namespace = "com.waminiyi.zeplaces"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.zeplaces"
+        applicationId = "com.waminiyi.zeplaces"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -57,6 +58,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.squareup.moshi)
+    ksp(libs.squareup.moshi.codegen)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

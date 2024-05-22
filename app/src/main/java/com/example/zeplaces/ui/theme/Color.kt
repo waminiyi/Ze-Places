@@ -1,6 +1,6 @@
 @file:Suppress("MagicNumber")
 
-package com.example.zeplaces.ui.theme
+package com.waminiyi.zeplaces.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

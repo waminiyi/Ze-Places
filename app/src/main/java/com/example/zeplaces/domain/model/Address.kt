@@ -1,4 +1,4 @@
-package com.example.zeplaces.domain.model
+package com.waminiyi.zeplaces.domain.model
 
 /**
  * Represents an address with a name and geographical coordinates.
