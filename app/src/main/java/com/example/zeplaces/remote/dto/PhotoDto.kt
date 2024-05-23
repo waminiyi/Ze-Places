@@ -1,7 +1,7 @@
 package com.waminiyi.zeplaces.remote.dto
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
 /**
  * Data transfer object representing a photo of a place.
@@ -10,9 +10,9 @@ import com.squareup.moshi.JsonClass
  * @property width The width of the photo in pixels.
  * @property photoReference A reference identifier for the photo, used to retrieve the image.
  */
-@JsonClass(generateAdapter = true)
+@Serializable
 data class PhotoDto(
-    @Json(name = "height") val height: Int,
-    @Json(name = "width") val width: Int,
-    @Json(name = "photo_reference") val photoReference: String
+    @SerialName("height") val height: Int,
+    @SerialName("width") val width: Int,
+    @SerialName("photo_reference") val photoReference: String
 )

@@ -1,7 +1,7 @@
 package com.waminiyi.zeplaces.remote.dto
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
 /**
  * Data transfer object representing a place with various attributes.
@@ -21,20 +21,20 @@ import com.squareup.moshi.JsonClass
  * @property userRatingsTotal The total number of user ratings for the place.
  * @property vicinity A feature name of a place.
  */
-@JsonClass(generateAdapter = true)
+@Serializable
 data class PlaceDto(
-    @Json(name = "business_status") val businessStatus: String,
-    @Json(name = "geometry") val geometry: GeometryDto,
-    @Json(name = "icon") val icon: String,
-    @Json(name = "icon_background_color") val iconBackgroundColor: String,
-    @Json(name = "icon_mask_base_uri") val iconMaskBaseUri: String,
-    @Json(name = "name") val name: String,
-    @Json(name = "opening_hours") val openingHours: OpeningHoursDto? = null,
-    @Json(name = "photos") val photos: List<PhotoDto>? = null,
-    @Json(name = "place_id") val placeId: String,
-    @Json(name = "price_level") val priceLevel: Int,
-    @Json(name = "rating") val rating: Float,
-    @Json(name = "types") val types: List<String>,
-    @Json(name = "user_ratings_total") val userRatingsTotal: Int,
-    @Json(name = "vicinity") val vicinity: String
+    @SerialName("business_status") val businessStatus: String,
+    @SerialName("geometry") val geometry: GeometryDto,
+    @SerialName("icon") val icon: String,
+    @SerialName("icon_background_color") val iconBackgroundColor: String,
+    @SerialName("icon_mask_base_uri") val iconMaskBaseUri: String,
+    @SerialName("name") val name: String,
+    @SerialName("opening_hours") val openingHours: OpeningHoursDto? = null,
+    @SerialName("photos") val photos: List<PhotoDto>? = null,
+    @SerialName("place_id") val placeId: String,
+    @SerialName("price_level") val priceLevel: Int,
+    @SerialName("rating") val rating: Float,
+    @SerialName("types") val types: List<String>,
+    @SerialName("user_ratings_total") val userRatingsTotal: Int,
+    @SerialName("vicinity") val vicinity: String
 )

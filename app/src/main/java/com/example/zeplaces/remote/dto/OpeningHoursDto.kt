@@ -1,14 +1,14 @@
 package com.waminiyi.zeplaces.remote.dto
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
 /**
  * Data transfer object representing the opening hours status of a place.
  *
  * @property openNow Indicates if the place is currently open.
  */
-@JsonClass(generateAdapter = true)
+@Serializable
 data class OpeningHoursDto(
-    @Json(name = "open_now") val openNow: Boolean
+    @SerialName("open_now") val openNow: Boolean
 )
