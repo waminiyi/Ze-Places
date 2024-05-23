@@ -10,44 +10,56 @@ interface RemoteDataSource {
     /**
      * Retrieves a list of nearby groceries.
      *
+     * @param location The location to search around.
+     * @param radius The search radius in meters.
      * @return A list of [PlaceDto] objects representing nearby groceries, or null if an error occurred.
      */
-    suspend fun getNearbyGroceries(): List<PlaceDto>?
+    suspend fun getNearbyGroceries(location: String, radius: Int): List<PlaceDto>?
 
     /**
      * Retrieves a list of nearby restaurants.
      *
+     * @param location The location to search around.
+     * @param radius The search radius in meters.
      * @return A list of [PlaceDto] objects representing nearby restaurants, or null if an error occurred.
      */
-    suspend fun getNearbyRestaurants(): List<PlaceDto>?
+    suspend fun getNearbyRestaurants(location: String, radius: Int): List<PlaceDto>?
 
     /**
      * Retrieves a list of nearby ATMs (Automated Teller Machines).
      *
+     * @param location The location to search around.
+     * @param radius The search radius in meters.
      * @return A list of [PlaceDto] objects representing nearby ATMs, or null if an error occurred.
      */
-    suspend fun getNearbyAtms(): List<PlaceDto>?
+    suspend fun getNearbyAtms(location: String, radius: Int): List<PlaceDto>?
 
     /**
      * Retrieves a list of nearby gas stations.
      *
+     * @param location The location to search around.
+     * @param radius The search radius in meters.
      * @return A list of [PlaceDto] objects representing nearby gas stations, or null if an error occurred.
      */
-    suspend fun getNearbyGasStations(): List<PlaceDto>?
+    suspend fun getNearbyGasStations(location: String, radius: Int): List<PlaceDto>?
 
     /**
      * Retrieves a list of nearby bakeries.
      *
+     * @param location The location to search around.
+     * @param radius The search radius in meters.
      * @return A list of [PlaceDto] objects representing nearby bakeries, or null if an error occurred.
      */
-    suspend fun getNearbyBakeries(): List<PlaceDto>?
+    suspend fun getNearbyBakeries(location: String, radius: Int): List<PlaceDto>?
 
     /**
      * Retrieves a list of nearby hotels.
      *
+     * @param location The location to search around.
+     * @param radius The search radius in meters.
      * @return A list of [PlaceDto] objects representing nearby hotels, or null if an error occurred.
      */
-    suspend fun getNearbyHotels(): List<PlaceDto>?
+    suspend fun getNearbyHotels(location: String, radius: Int): List<PlaceDto>?
 
     /**
      * Requests more places based on the provided page number.

@@ -10,10 +10,12 @@ import io.ktor.client.request.parameter
  * A service class to interact with the Google Places API.
  *
  * @property baseUrl The base URL for the Google Places API.
+ * @param apiKey Your API key for accessing the Google Places API.
  * @property client The HTTP client used to make requests.
  */
 class PlaceApi(
     private val baseUrl: String,
+    private val apiKey: String,
     private val client: HttpClient
 ) {
     /**
@@ -22,14 +24,12 @@ class PlaceApi(
      * @param location The latitude and longitude around which to retrieve place information, in the format "lat,lng".
      * @param radius The distance (in meters) within which to return place results.
      * @param placeType The type of place to search for (e.g., "restaurant").
-     * @param apiKey Your API key for accessing the Google Places API.
      * @return A [PlaceSearchResponseDto] containing the search results.
      */
     suspend fun getNearbyPlaces(
         location: String,
         radius: Int,
         placeType: String,
-        apiKey: String
     ): PlaceSearchResponseDto {
         return client.get(baseUrl) {
             parameter(LOCATION_KEY_NAME, location)
@@ -43,10 +43,9 @@ class PlaceApi(
      * Retrieves the next set of place results using the provided next page token.
      *
      * @param nextPageToken A token to retrieve the next page of results.
-     * @param apiKey Your API key for accessing the Google Places API.
      * @return A [PlaceSearchResponseDto] containing the next set of search results.
      */
-    suspend fun getNextPage(nextPageToken: String, apiKey: String): PlaceSearchResponseDto {
+    suspend fun getNextPage(nextPageToken: String): PlaceSearchResponseDto {
         return client.get(baseUrl) {
             parameter(PAGE_TOKEN_KEY_NAME, nextPageToken)
             parameter(API_KEY_NAME, apiKey)
