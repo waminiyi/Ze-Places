@@ -1,5 +1,6 @@
 package com.example.zeplaces.remote.api
 
+import com.waminiyi.zeplaces.BuildConfig
 import com.waminiyi.zeplaces.remote.dto.PlaceSearchResponseDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -33,6 +34,7 @@ class PlaceApi(
             parameter(LOCATION_KEY_NAME, location)
             parameter(RADIUS_KEY_NAME, radius)
             parameter(TYPE_KEY_NAME, placeType)
+            parameter(KEY, BuildConfig.MAPS_API_KEY)
         }.body()
     }
 
@@ -45,6 +47,7 @@ class PlaceApi(
     suspend fun getNextPage(nextPageToken: String): PlaceSearchResponseDto {
         return client.get(baseUrl) {
             parameter(PAGE_TOKEN_KEY_NAME, nextPageToken)
+            parameter(KEY,  BuildConfig.MAPS_API_KEY)
         }.body()
     }
 
@@ -53,5 +56,6 @@ class PlaceApi(
         private const val RADIUS_KEY_NAME = "radius"
         private const val TYPE_KEY_NAME = "type"
         private const val PAGE_TOKEN_KEY_NAME = "pagetoken"
+        private const val KEY = "key"
     }
 }

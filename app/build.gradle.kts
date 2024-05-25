@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -9,6 +11,7 @@ plugins {
 android {
     namespace = "com.waminiyi.zeplaces"
     compileSdk = 34
+    android.buildFeatures.buildConfig = true
 
     defaultConfig {
         applicationId = "com.waminiyi.zeplaces"
@@ -21,6 +24,19 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        //load the values from secrets.properties file
+        val keystoreFile = project.rootProject.file("secrets.properties")
+        val properties = Properties()
+        properties.load(keystoreFile.inputStream())
+
+        //return empty key in case something goes wrong
+        val mapsApiKey = properties.getProperty("MAPS_API_KEY") ?: ""
+        buildConfigField(
+            type = "String",
+            name = "MAPS_API_KEY",
+            value = mapsApiKey
+        )
     }
 
     buildTypes {
@@ -41,6 +57,11 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -75,6 +96,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.test.junit)
+    testImplementation(libs.okhttp.mockwebserver)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
