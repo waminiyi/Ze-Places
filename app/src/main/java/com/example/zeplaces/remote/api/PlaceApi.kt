@@ -4,8 +4,10 @@ import com.waminiyi.zeplaces.BuildConfig
 import com.waminiyi.zeplaces.remote.dto.PlaceSearchResponseDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.request.accept
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
+import io.ktor.http.ContentType
 
 /**
  * A service class to interact with the Google Places API.
@@ -31,6 +33,7 @@ class PlaceApi(
         placeType: String,
     ): PlaceSearchResponseDto {
         return client.get(baseUrl) {
+            accept(ContentType.Application.Json)
             parameter(LOCATION_KEY_NAME, location)
             parameter(RADIUS_KEY_NAME, radius)
             parameter(TYPE_KEY_NAME, placeType)

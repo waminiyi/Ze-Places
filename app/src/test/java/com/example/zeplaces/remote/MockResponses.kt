@@ -1,10 +1,6 @@
-package com.example.zeplaces
+package com.example.zeplaces.remote
 
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonObject
-import okhttp3.ResponseBody.Companion.toResponseBody
-
-val mockResponse ="""{
+val mockOkResponse = """{
   "html_attributions": [],
   "results": [
     {
@@ -62,3 +58,9 @@ val mockResponse ="""{
   "status": "OK"
 }
 """.trimIndent()
+
+val invalidRequestResponse = """ {
+    "html_attributions" : [],
+    "results" : [],
+    "status" : "INVALID_REQUEST"
+}""".trimIndent()
