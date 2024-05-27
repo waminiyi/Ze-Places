@@ -6,20 +6,20 @@ package com.waminiyi.zeplaces.domain.model
  * @property name The name of the place of interest.
  * @property rating The rating of the place of interest.
  * @property ratingCount The count of ratings for the place of interest.
- * @property location The geographical coordinates of the place of interest.
+ * @property address The address of the place of interest.
  * @property isOpenNow Indicates whether the place of interest is open now.
- * @property photoReference The reference to a photo of the place of interest.
+ * @property photoUrl The reference to a photo of the place of interest.
  * @property distance The distance between the user's location and the place of interest.
  * @property isFavorite Indicates whether the place of interest is marked as a favorite by the user.
  */
 data class PlaceOfInterest(
     val id: String,
-    val name: String,
-    val rating: Float,
-    val ratingCount: Int,
-    val location: Coordinates,
-    val isOpenNow: Boolean,
-    val photoReference: String,
-    val distance: Int,
+    val name: String?,
+    val rating: Float?,
+    val ratingCount: Int?,
+    val address: Address,
+    val isOpenNow: Boolean?,
+    val photoUrl: String?,
+    val distance: Int?,
     val isFavorite: Boolean = false
 )

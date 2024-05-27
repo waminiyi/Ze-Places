@@ -6,6 +6,6 @@ package com.waminiyi.zeplaces.domain.model
  * @property coordinates The geographical coordinates of the address.
  */
 data class Address(
-    val addressName: String,
-    val coordinates: Coordinates
+    val addressName: String?,
+    val coordinates: Coordinates?
 )
