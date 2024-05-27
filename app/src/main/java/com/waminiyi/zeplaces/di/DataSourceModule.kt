@@ -1,4 +1,4 @@
-package com.example.zeplaces.di
+package com.waminiyi.zeplaces.di
 
 import com.example.zeplaces.remote.api.PlaceApi
 import com.example.zeplaces.remote.datasource.GoogleRemoteDataSource

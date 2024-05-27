@@ -1,4 +1,4 @@
-package com.example.zeplaces.remote
+package com.waminiyi.zeplaces.remote
 
 val mockOkResponse = """{
   "html_attributions": [],

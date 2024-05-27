@@ -1,7 +1,7 @@
 package com.example.zeplaces.remote.utils
 
-import com.example.zeplaces.remote.invalidRequestResponse
-import com.example.zeplaces.remote.mockOkResponse
+import com.waminiyi.zeplaces.remote.invalidRequestResponse
+import com.waminiyi.zeplaces.remote.mockOkResponse
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest

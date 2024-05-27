@@ -1,6 +1,6 @@
-package com.example.zeplaces.remote
+package com.waminiyi.zeplaces.remote
 
-import com.example.zeplaces.di.networkModule
+import com.waminiyi.zeplaces.di.networkModule
 import com.example.zeplaces.remote.api.PlaceApi
 import com.example.zeplaces.remote.utils.MockWebServerDispatcher
 import io.ktor.client.HttpClient

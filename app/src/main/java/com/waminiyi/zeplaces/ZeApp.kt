@@ -1,9 +1,8 @@
-package com.example.zeplaces
+package com.waminiyi.zeplaces
 
 import android.app.Application
-import com.example.zeplaces.di.datasourceModule
-import com.example.zeplaces.di.networkModule
-import io.ktor.http.ContentType
+import com.waminiyi.zeplaces.di.datasourceModule
+import com.waminiyi.zeplaces.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
 

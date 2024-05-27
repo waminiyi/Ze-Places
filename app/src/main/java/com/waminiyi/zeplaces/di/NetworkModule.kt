@@ -1,4 +1,4 @@
-package com.example.zeplaces.di
+package com.waminiyi.zeplaces.di
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android

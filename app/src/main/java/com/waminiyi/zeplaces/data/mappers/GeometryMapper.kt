@@ -1,4 +1,4 @@
-package com.example.zeplaces.data.mappers
+package com.waminiyi.zeplaces.data.mappers
 
 import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.remote.dto.GeometryDto
