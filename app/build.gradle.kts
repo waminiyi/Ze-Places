@@ -30,15 +30,18 @@ android {
         //load the values from secrets.properties file
         val keystoreFile = project.rootProject.file("secrets.properties")
         val properties = Properties()
-        properties.load(keystoreFile.inputStream())
-
+        if (keystoreFile.exists()) {
+            properties.load(keystoreFile.inputStream())
+        }
         //return empty key in case something goes wrong
-        val mapsApiKey = properties.getProperty("MAPS_API_KEY") ?: ""
-        buildConfigField(
-            type = "String",
-            name = "MAPS_API_KEY",
-            value = mapsApiKey
-        )
+        val mapsApiKey = properties.getProperty("MAPS_API_KEY") ?:  System.getenv("MAPS_API_KEY") ?: ""
+
+        // Check if MAPS_API_KEY is not empty and set the build config field
+        if (mapsApiKey.isNotEmpty()) {
+            buildConfigField("String", "MAPS_API_KEY", "$mapsApiKey")
+        } else {
+            throw GradleException("MAPS_API_KEY is not set. Please provide a valid API key.")
+        }
     }
 
     buildTypes {
