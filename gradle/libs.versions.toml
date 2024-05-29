@@ -14,6 +14,7 @@ ktor = "2.1.0"
 kotlinxSerialization = "1.6.0"
 koin-bom = "3.5.0"
 mockWebserver = "4.12.0"
+room_version = "2.6.1"
 
 
 [libraries]
@@ -44,9 +45,9 @@ koin-android = { module = "io.insert-koin:koin-android" }
 koin-test = { module = "io.insert-koin:koin-test" }
 koin-test-junit = { module = "io.insert-koin:koin-test-junit4" }
 okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockWebserver" }
-
-
-
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
 
 
 [plugins]

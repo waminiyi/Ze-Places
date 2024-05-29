@@ -10,7 +10,7 @@ package com.waminiyi.zeplaces.domain.model
  * @property isOpenNow Indicates whether the place of interest is open now.
  * @property photoUrl The reference to a photo of the place of interest.
  * @property distance The distance between the user's location and the place of interest.
- * @property isFavorite Indicates whether the place of interest is marked as a favorite by the user.
+ * @property isSaved Indicates whether the place of interest is marked as saved by the user.
  */
 data class PlaceOfInterest(
     val id: String,
@@ -21,5 +21,5 @@ data class PlaceOfInterest(
     val isOpenNow: Boolean?,
     val photoUrl: String?,
     val distance: Int?,
-    val isFavorite: Boolean = false
+    val isSaved: Boolean = false
 )

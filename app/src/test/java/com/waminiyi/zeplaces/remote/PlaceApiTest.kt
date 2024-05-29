@@ -10,6 +10,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.koin.core.context.GlobalContext.startKoin
+import org.koin.core.context.GlobalContext.stopKoin
 import org.koin.test.KoinTest
 import org.koin.test.inject
 import kotlin.test.assertNotNull
@@ -22,19 +23,21 @@ class PlaceApiTest : KoinTest {
 
     @Before
     fun setUp() {
+        startKoin {
+            modules(networkModule)
+        }
         server.start()
     }
 
     @After
     fun tearDown() {
         server.shutdown()
+        stopKoin()
     }
 
     @Test
     fun testOkRequestResponseIsWellHandled(): Unit = runBlocking {
-        startKoin {
-            modules(networkModule)
-        }
+
         server.dispatcher = MockWebServerDispatcher().RequestDispatcher()
 
         val baseUrl = server.url("maps/api/place/nearbysearch/json")
@@ -51,9 +54,7 @@ class PlaceApiTest : KoinTest {
 
     @Test
     fun testInvalidRequestResponseIsWellHandled(): Unit = runBlocking {
-        startKoin {
-            modules(networkModule)
-        }
+
         server.dispatcher = MockWebServerDispatcher().InvalidRequestDispatcher()
 
         val baseUrl = server.url("maps/api/place/nearbysearch/json")

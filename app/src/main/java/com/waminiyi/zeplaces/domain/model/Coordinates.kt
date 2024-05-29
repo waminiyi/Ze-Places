@@ -6,6 +6,6 @@ package com.waminiyi.zeplaces.domain.model
  * @property longitude The longitude value in decimal degrees.
  */
 data class Coordinates(
-    val latitude: Double,
-    val longitude: Double
+    val latitude: Double?,
+    val longitude: Double?
 )
