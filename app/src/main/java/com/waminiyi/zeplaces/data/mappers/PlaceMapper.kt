@@ -7,6 +7,11 @@ import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
 import com.waminiyi.zeplaces.remote.dto.PlaceDto
 import java.util.UUID
 
+/**
+ * Extension of [PlaceDto].
+ * Maps an [PlaceDto] to an [PlaceOfInterest].
+ *
+ */
 fun PlaceDto.toPlaceOfInterest() =
     PlaceOfInterest(
         id = this.placeId ?: UUID.randomUUID().toString(),
@@ -23,6 +28,11 @@ fun PlaceDto.toPlaceOfInterest() =
         isSaved = false
     )
 
+/**
+ * Extension of [PlaceOfInterest].
+ * Maps an [PlaceOfInterest] to an [SavedPlaceEntity].
+ *
+ */
 fun PlaceOfInterest.toSavedPlaceEntity() =
     SavedPlaceEntity(
         id = this.id,
@@ -37,6 +47,11 @@ fun PlaceOfInterest.toSavedPlaceEntity() =
         isSaved = this.isSaved
     )
 
+/**
+ * Extension of [SavedPlaceEntity].
+ * Maps an [SavedPlaceEntity] to an [PlaceOfInterest].
+ *
+ */
 fun SavedPlaceEntity.toPlaceOfInterest() =
     PlaceOfInterest(
         id = this.id,

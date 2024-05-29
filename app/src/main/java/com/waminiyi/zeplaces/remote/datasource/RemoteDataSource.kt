@@ -1,4 +1,4 @@
-package com.example.zeplaces.remote.datasource
+package com.waminiyi.zeplaces.remote.datasource
 
 import com.waminiyi.zeplaces.remote.dto.PlaceDto
 
@@ -8,64 +8,26 @@ import com.waminiyi.zeplaces.remote.dto.PlaceDto
 interface RemoteDataSource {
 
     /**
-     * Retrieves a list of nearby groceries.
+     * Retrieves nearby places based on the provided location, radius, and type.
      *
-     * @param location The location to search around.
-     * @param radius The search radius in meters.
-     * @return A list of [PlaceDto] objects representing nearby groceries, or null if an error occurred.
+     * @param location The location coordinates in the format "latitude,longitude".
+     * @param radius The radius within which to search for nearby places, in meters.
+     * @param placeType The type of place to search for, e.g., "restaurant", "bar", etc.
+     * @return A list of [PlaceDto] objects representing the nearby places, or null if an error occurred.
      */
-    suspend fun getNearbyGroceries(location: String, radius: Int): List<PlaceDto>?
-
-    /**
-     * Retrieves a list of nearby restaurants.
-     *
-     * @param location The location to search around.
-     * @param radius The search radius in meters.
-     * @return A list of [PlaceDto] objects representing nearby restaurants, or null if an error occurred.
-     */
-    suspend fun getNearbyRestaurants(location: String, radius: Int): List<PlaceDto>?
-
-    /**
-     * Retrieves a list of nearby ATMs (Automated Teller Machines).
-     *
-     * @param location The location to search around.
-     * @param radius The search radius in meters.
-     * @return A list of [PlaceDto] objects representing nearby ATMs, or null if an error occurred.
-     */
-    suspend fun getNearbyAtms(location: String, radius: Int): List<PlaceDto>?
-
-    /**
-     * Retrieves a list of nearby gas stations.
-     *
-     * @param location The location to search around.
-     * @param radius The search radius in meters.
-     * @return A list of [PlaceDto] objects representing nearby gas stations, or null if an error occurred.
-     */
-    suspend fun getNearbyGasStations(location: String, radius: Int): List<PlaceDto>?
-
-    /**
-     * Retrieves a list of nearby bakeries.
-     *
-     * @param location The location to search around.
-     * @param radius The search radius in meters.
-     * @return A list of [PlaceDto] objects representing nearby bakeries, or null if an error occurred.
-     */
-    suspend fun getNearbyBakeries(location: String, radius: Int): List<PlaceDto>?
-
-    /**
-     * Retrieves a list of nearby hotels.
-     *
-     * @param location The location to search around.
-     * @param radius The search radius in meters.
-     * @return A list of [PlaceDto] objects representing nearby hotels, or null if an error occurred.
-     */
-    suspend fun getNearbyHotels(location: String, radius: Int): List<PlaceDto>?
+    suspend fun getNearbyPlaces(
+        location: String,
+        radius: Int,
+        placeType: String
+    ): List<PlaceDto>?
 
     /**
      * Requests more places based on the provided page number.
      *
-     * @param page The page number indicating which page of places to request.
-     * @return A list of [PlaceDto] objects representing the requested page of places, or null if an error occurred.
+     * @return A list of [PlaceDto] objects representing the requested page of places,
+     * null if an error occurred or no more places.
      */
-    suspend fun requestMorePlaces(page: Int): List<PlaceDto>?
+    suspend fun requestMorePlaces(): List<PlaceDto>?
+
+
 }

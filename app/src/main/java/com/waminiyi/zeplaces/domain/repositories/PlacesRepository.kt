@@ -1,5 +1,6 @@
 package com.waminiyi.zeplaces.domain.repositories
 
+import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
 import com.waminiyi.zeplaces.domain.model.PlaceType
 
@@ -21,30 +22,26 @@ interface PlacesRepository {
     suspend fun savePlace(place: PlaceOfInterest)
 
     /**
-     * Un-saves a place of interest.
-     * @param place The place of interest to un-save.
+     * Remove a place of interest from the saved.
+     * @param placeId The id of the place to remove.
      */
-    suspend fun unSavePlace(place: PlaceOfInterest)
-
-    /**
-     * Checks if a place of interest is saved.
-     * @param placeId The ID of the place of interest to check.
-     * @return True if the place of interest is saved, false otherwise.
-     */
-    suspend fun checkIsSaved(placeId: String): Boolean
+    suspend fun removeFromSavedPlace(placeId: String)
 
     /**
      * Retrieves nearby places of interest based on the specified place type.
      * @param placeType The type of place to search for.
      * @return A list of nearby places of interest.
      */
-    suspend fun getNearbyPlaces(placeType: PlaceType): List<PlaceOfInterest>
+    suspend fun getNearbyPlaces(
+        placeType: PlaceType,
+        coordinates: Coordinates,
+        radius: Int
+    ): List<PlaceOfInterest>
 
     /**
      * Requests more places of interest.
-     * @param page The page number of places to request.
      * @return A list of requested places of interest.
      */
-    suspend fun requestMorePlaces(page: Int): List<PlaceOfInterest>
+    suspend fun requestMorePlaces(): List<PlaceOfInterest>
 }
 

@@ -31,7 +31,7 @@ val mockOkResponse = """{
       "photos": [
         {
           "height": 608,
-          "photo_reference": "Aap_uECvJIZuXT-uLDYm4DPbrV7gXVPeplbTWUgcOJ6rnfc4bUYCEAwPU_AmXGIaj0PDhWPbmrjQC8hhuXRJQjnA1-iREGEn7I0ZneHg5OP1mDT7lYVpa1hUPoz7cn8iCGBN9MynjOPSUe-UooRrFw2XEXOLgRJ-uKr6tGQUp77CWVocpcoG",
+          "photo_reference": "Aap_uECvJIZuXT---UooRrFw2XEXOLgRJ-uKr6tGQUp77CWVocpcoG",
           "width": 1080
         }
       ],

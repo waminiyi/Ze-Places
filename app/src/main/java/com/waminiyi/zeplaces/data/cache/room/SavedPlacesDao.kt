@@ -1,8 +1,14 @@
 package com.waminiyi.zeplaces.data.cache.room
 
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
+/**
+ * Data Access Object (DAO) for accessing saved places in the local Room database.
+ *
+ */
 @Dao
 interface SavedPlacesDao {
     /**
@@ -16,11 +22,13 @@ interface SavedPlacesDao {
      * Saves a place of interest.
      * @param place The place to save.
      */
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun savePlace(place: SavedPlaceEntity)
 
     /**
      * Remove a place from saved places.
-     * @param place The place to remove.
+     * @param placeId The id of the place to remove.
      */
-    suspend fun unSavePlace(place: SavedPlaceEntity)
+    @Query("DELETE FROM saved_places WHERE id  = :placeId")
+    suspend fun removeFromSavedPlaces(placeId: String)
 }

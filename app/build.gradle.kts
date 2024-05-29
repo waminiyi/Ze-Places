@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.devtools.ksp)
     kotlin("plugin.serialization") version "2.0.0"
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -64,7 +66,7 @@ android {
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
     packaging {
         resources {
@@ -93,8 +95,9 @@ dependencies {
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.core)
     implementation(libs.koin.android)
-    implementation(libs.room.runtime)
+//    implementation(libs.room.runtime)
     ksp(libs.room.compiler)
+
     implementation(libs.room.ktx)
     testImplementation(libs.junit)
     testImplementation(libs.koin.test)
