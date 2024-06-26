@@ -98,8 +98,10 @@ dependencies {
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.core)
     implementation(libs.koin.android)
+    implementation(libs.androidx.graphics.shapes.android)
 //    implementation(libs.room.runtime)
     ksp(libs.room.compiler)
+    implementation(libs.coil.compose)
 
     implementation(libs.room.ktx)
     testImplementation(libs.junit)

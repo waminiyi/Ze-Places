@@ -15,6 +15,8 @@ kotlinxSerialization = "1.6.0"
 koin-bom = "3.5.0"
 mockWebserver = "4.12.0"
 room_version = "2.6.1"
+graphicsShapesAndroid = "1.0.0-beta01"
+coil_version = "2.6.0"
 
 
 [libraries]
@@ -48,6 +50,8 @@ okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver",
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
+androidx-graphics-shapes-android = { group = "androidx.graphics", name = "graphics-shapes-android", version.ref = "graphicsShapesAndroid" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil_version" }
 
 
 [plugins]

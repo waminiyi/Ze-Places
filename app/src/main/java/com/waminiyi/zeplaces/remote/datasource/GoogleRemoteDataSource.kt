@@ -1,7 +1,7 @@
 package com.waminiyi.zeplaces.remote.datasource
 
 import android.util.Log
-import com.example.zeplaces.remote.api.PlaceApi
+import com.waminiyi.zeplaces.remote.api.PlaceApi
 import com.example.zeplaces.remote.dto.PlacesSearchStatus
 import com.waminiyi.zeplaces.remote.dto.PlaceDto
 import java.io.IOException

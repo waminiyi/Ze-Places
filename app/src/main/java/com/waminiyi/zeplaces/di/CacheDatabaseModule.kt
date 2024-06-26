@@ -11,8 +11,8 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val cacheDatasourceModule = module {
-    single { provideRemDatabase(androidContext()) }
-    single { provideEstateDao(get()) }
+    single <RoomPlacesDatabase>{ provideRemDatabase(androidContext()) }
+    single <SavedPlacesDao> { provideEstateDao(get()) }
 }
 
 /**

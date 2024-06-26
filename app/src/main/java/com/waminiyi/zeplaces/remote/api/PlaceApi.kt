@@ -1,4 +1,4 @@
-package com.example.zeplaces.remote.api
+package com.waminiyi.zeplaces.remote.api
 
 import com.waminiyi.zeplaces.BuildConfig
 import com.waminiyi.zeplaces.remote.dto.PlaceSearchResponseDto

@@ -1,7 +1,7 @@
 package com.waminiyi.zeplaces.remote
 
 import com.waminiyi.zeplaces.di.networkModule
-import com.example.zeplaces.remote.api.PlaceApi
+import com.waminiyi.zeplaces.remote.api.PlaceApi
 import com.example.zeplaces.remote.utils.MockWebServerDispatcher
 import io.ktor.client.HttpClient
 import kotlinx.coroutines.runBlocking

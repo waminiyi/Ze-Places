@@ -1,6 +1,6 @@
 package com.waminiyi.zeplaces.di
 
-import com.example.zeplaces.remote.api.PlaceApi
+import com.waminiyi.zeplaces.remote.api.PlaceApi
 import com.waminiyi.zeplaces.remote.datasource.GoogleRemoteDataSource
 import com.waminiyi.zeplaces.remote.datasource.RemoteDataSource
 import org.koin.dsl.module

@@ -4,6 +4,10 @@ import com.waminiyi.zeplaces.data.cache.room.SavedPlaceEntity
 import com.waminiyi.zeplaces.domain.model.Address
 import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
+import com.waminiyi.zeplaces.remote.dto.GeometryDto
+import com.waminiyi.zeplaces.remote.dto.LocationDto
+import com.waminiyi.zeplaces.remote.dto.OpeningHoursDto
+import com.waminiyi.zeplaces.remote.dto.PhotoDto
 import com.waminiyi.zeplaces.remote.dto.PlaceDto
 import java.util.UUID
 
