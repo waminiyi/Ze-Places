@@ -1,27 +1,30 @@
 package com.waminiyi.zeplaces.domain.model
 
+import androidx.annotation.DrawableRes
+import com.waminiyi.zeplaces.R
+
 /**
  * Represents different types of places.
  * @property value The human-readable name of the place type.
  */
-enum class PlaceType(val value: String) {
+enum class PlaceType(val value: String, @DrawableRes val iconResourceId: Int) {
     /** Represents a grocery store. */
-    GROCERY(GROCERIES_NAME),
+    GROCERY(GROCERIES_NAME, R.drawable.grocery),
 
     /** Represents a restaurant. */
-    RESTAURANT(RESTAURANTS_NAME),
+    RESTAURANT(RESTAURANTS_NAME, R.drawable.restaurant),
 
     /** Represents an ATM. */
-    ATM(ATM_NAME),
+    ATM(ATM_NAME, R.drawable.atm),
 
     /** Represents a gas station. */
-    GAS(GAS_NAME),
+    GAS(GAS_NAME, R.drawable.gas),
 
     /** Represents a bakery. */
-    BAKERY(BAKERY_NAME),
+    BAKERY(BAKERY_NAME, R.drawable.bakery),
 
     /** Represents a hotel. */
-    HOTEL(HOTELS_NAME)
+    HOTEL(HOTELS_NAME, R.drawable.hotel)
 }
 
 /** The human-readable name for groceries. */
