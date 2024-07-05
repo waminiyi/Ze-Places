@@ -5,30 +5,24 @@ import com.waminiyi.zeplaces.R
 
 /**
  * Represents different types of places.
- * @property value The human-readable name of the place type.
+ * @property typeName The human-readable name of the place type.
  */
-enum class PlaceType(val value: String, @DrawableRes val iconResourceId: Int) {
-    /** Represents a grocery store. */
-    GROCERY(GROCERIES_NAME, R.drawable.grocery),
+enum class PlaceType(val typeName: String, val typeKey: String, @DrawableRes val iconResourceId: Int) {
+
 
     /** Represents a restaurant. */
-    RESTAURANT(RESTAURANTS_NAME, R.drawable.restaurant),
+    RESTAURANT(RESTAURANTS_NAME, "restaurant", R.drawable.restaurant),
 
     /** Represents an ATM. */
-    ATM(ATM_NAME, R.drawable.atm),
+    ATM(ATM_NAME,"atm", R.drawable.atm),
 
     /** Represents a gas station. */
-    GAS(GAS_NAME, R.drawable.gas),
+    GAS(GAS_NAME,"gas_station", R.drawable.gas),
 
     /** Represents a bakery. */
-    BAKERY(BAKERY_NAME, R.drawable.bakery),
+    BAKERY(BAKERY_NAME, "bakery", R.drawable.bakery),
 
-    /** Represents a hotel. */
-    HOTEL(HOTELS_NAME, R.drawable.hotel)
 }
-
-/** The human-readable name for groceries. */
-const val GROCERIES_NAME = "Groceries"
 
 /** The human-readable name for restaurants. */
 const val RESTAURANTS_NAME = "Restaurants"
@@ -42,5 +36,3 @@ const val GAS_NAME = "Gas"
 /** The human-readable name for bakeries. */
 const val BAKERY_NAME = "Bakery"
 
-/** The human-readable name for hotels. */
-const val HOTELS_NAME = "Hotels"

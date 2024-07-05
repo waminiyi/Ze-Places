@@ -4,6 +4,7 @@ import android.app.Application
 import com.waminiyi.zeplaces.di.cacheDatasourceModule
 import com.waminiyi.zeplaces.di.remoteDatasourceModule
 import com.waminiyi.zeplaces.di.networkModule
+import com.waminiyi.zeplaces.di.presentationModule
 import com.waminiyi.zeplaces.di.repositoriesModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
@@ -20,7 +21,8 @@ class ZeApp : Application() {
                 networkModule,
                 remoteDatasourceModule,
                 cacheDatasourceModule,
-                repositoriesModule
+                repositoriesModule,
+                presentationModule
             )
         }
     }

@@ -1,14 +1,13 @@
 package com.waminiyi.zeplaces.data.repository
 
-import com.waminiyi.zeplaces.remote.datasource.RemoteDataSource
 import com.waminiyi.zeplaces.data.cache.room.SavedPlacesDao
-import com.waminiyi.zeplaces.data.mappers.getKey
 import com.waminiyi.zeplaces.data.mappers.toPlaceOfInterest
 import com.waminiyi.zeplaces.data.mappers.toSavedPlaceEntity
 import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
 import com.waminiyi.zeplaces.domain.model.PlaceType
 import com.waminiyi.zeplaces.domain.repositories.PlacesRepository
+import com.waminiyi.zeplaces.remote.datasource.RemoteDataSource
 
 /**
  * Default implementation of the [PlacesRepository] interface.
@@ -45,7 +44,7 @@ class DefaultPlaceRepository(
         return remoteDataSource.getNearbyPlaces(
             location = "${coordinates.latitude},${coordinates.longitude}",
             radius = radius,
-            placeType = placeType.getKey()
+            placeType = placeType.typeKey
         )?.map { it.toPlaceOfInterest() } ?: emptyList()
     }
 
