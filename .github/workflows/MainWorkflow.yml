@@ -4,20 +4,31 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
+
 jobs:
   code-structure-with-lint-checks:
     name: Check code structure with lint
     uses: ./.github/workflows/code_structure.yml
+    secrets:
+        MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
 
   code-smells-with-detekt:
     name: Check code smell with detekt
     uses: ./.github/workflows/code_smells.yml
+    secrets:
+      MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
 
   tests:
     name: Run tests
     uses: ./.github/workflows/tests.yml
+    secrets:
+      MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
 
   build:
     name: Build the app
     needs: [code-structure-with-lint-checks, code-smells-with-detekt, tests]
     uses: ./.github/workflows/build.yml
+    secrets:
+      MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
