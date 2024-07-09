@@ -9,7 +9,6 @@ import com.waminiyi.zeplaces.R
  */
 enum class PlaceType(val typeName: String, val typeKey: String, @DrawableRes val iconResourceId: Int) {
 
-
     /** Represents a restaurant. */
     RESTAURANT(RESTAURANTS_NAME, "restaurant", R.drawable.restaurant),
 

@@ -9,8 +9,6 @@ package com.waminiyi.zeplaces.domain.model
  * @property address The address of the place of interest.
  * @property isOpenNow Indicates whether the place of interest is open now.
  * @property photoUrl The reference to a photo of the place of interest.
- * @property distance The distance between the user's location and the place of interest.
- * @property isSaved Indicates whether the place of interest is marked as saved by the user.
  */
 data class PlaceOfInterest(
     val id: String,
@@ -20,6 +18,4 @@ data class PlaceOfInterest(
     val address: Address,
     val isOpenNow: Boolean?,
     val photoUrl: String?,
-    val distance: Int?,
-    val isSaved: Boolean = false
 )
