@@ -18,6 +18,9 @@ room_version = "2.6.1"
 graphicsShapesAndroid = "1.0.0-beta01"
 coil_version = "2.6.0"
 viewmodel_compose = "2.8.3"
+play_services_maps = "19.0.0"
+maps-compose = "6.0.0"
+playServicesLocation = "21.3.0"
 
 
 
@@ -53,10 +56,13 @@ koin-test = { module = "io.insert-koin:koin-test" }
 koin-test-junit = { module = "io.insert-koin:koin-test-junit4" }
 okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockWebserver" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "play_services_maps" }
+maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "maps-compose" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
 androidx-graphics-shapes-android = { group = "androidx.graphics", name = "graphics-shapes-android", version.ref = "graphicsShapesAndroid" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil_version" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 
 
 [plugins]

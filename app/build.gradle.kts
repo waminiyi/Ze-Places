@@ -38,7 +38,9 @@ android {
 
         // Check if MAPS_API_KEY is not empty and set the build config field
         if (mapsApiKey.isNotEmpty()) {
-            buildConfigField("String", "MAPS_API_KEY", "$mapsApiKey")
+            buildConfigField("String", "MAPS_API_KEY", mapsApiKey)
+            resValue ("string", "google_maps_key", mapsApiKey)
+
         } else {
             throw GradleException("MAPS_API_KEY is not set. Please provide a valid API key.")
         }
@@ -54,11 +56,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -100,10 +102,14 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
+    implementation(libs.play.services.maps)
+    implementation(libs.maps.compose)
     implementation(libs.androidx.graphics.shapes.android)
-//    implementation(libs.room.runtime)
+    implementation(libs.play.services.location)
     ksp(libs.room.compiler)
     implementation(libs.coil.compose)
+    implementation ("com.google.accompanist:accompanist-permissions:0.24.13-rc")
+
 
     implementation(libs.room.ktx)
     testImplementation(libs.junit)

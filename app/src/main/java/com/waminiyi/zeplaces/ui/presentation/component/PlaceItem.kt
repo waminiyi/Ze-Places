@@ -68,9 +68,6 @@ fun PlaceItem(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     PlaceRating(rating = place.rating, ratingCount = place.ratingCount)
                     Spacer(modifier = Modifier.width(8.dp))
-                    place.distance?.let {
-                        Text(text = "${it}m", style = MaterialTheme.typography.bodyMedium)
-                    }
                 }
 
                 Spacer(modifier = Modifier.height(4.dp))

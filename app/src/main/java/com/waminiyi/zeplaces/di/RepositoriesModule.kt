@@ -7,7 +7,6 @@ import org.koin.dsl.module
 val repositoriesModule = module {
     single<PlacesRepository> {
         DefaultPlaceRepository(
-            localDataSource = get(),
             remoteDataSource = get()
         )
     }
