@@ -1,6 +1,5 @@
 package com.waminiyi.zeplaces.ui.presentation.component
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -8,10 +7,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -28,7 +23,6 @@ import com.waminiyi.zeplaces.ui.theme.PineGreen
 @Composable
 fun PlaceItem(
     place: PlaceOfInterest,
-    // onClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -37,27 +31,14 @@ fun PlaceItem(
         modifier = modifier
     ) {
         Column {
-            Box(modifier = Modifier.fillMaxWidth()) {
-                AsyncImage(
-                    model = place.photoUrl,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .height(220.dp),
-                    contentScale = ContentScale.Crop
-                )
-                Box(
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .padding(8.dp)
-                ) {
-                    Button(onClick = { /*TODO*/ }) {
-                        Icon(
-                            imageVector = Icons.Default.Favorite,
-                            contentDescription = null
-                        )
-                    }
-                }
-            }
+            AsyncImage(
+                model = place.photoUrl,
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(220.dp),
+                contentScale = ContentScale.Crop
+            )
             Column(modifier = Modifier.padding(8.dp)) {
                 place.name?.let {
                     Text(text = it, style = MaterialTheme.typography.titleLarge)

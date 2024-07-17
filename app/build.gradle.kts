@@ -106,12 +106,10 @@ dependencies {
     implementation(libs.maps.compose)
     implementation(libs.androidx.graphics.shapes.android)
     implementation(libs.play.services.location)
-    ksp(libs.room.compiler)
     implementation(libs.coil.compose)
-    implementation ("com.google.accompanist:accompanist-permissions:0.24.13-rc")
+    implementation (libs.accompanist.permissions)
 
 
-    implementation(libs.room.ktx)
     testImplementation(libs.junit)
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.test.junit)

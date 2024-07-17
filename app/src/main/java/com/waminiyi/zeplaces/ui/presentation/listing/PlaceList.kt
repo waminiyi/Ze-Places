@@ -14,7 +14,10 @@ import com.waminiyi.zeplaces.ui.presentation.component.PlaceItem
 
 @Suppress("UndocumentedPublicFunction")
 @Composable
-fun PlaceList(nearbyPlaces: List<PlaceOfInterest>, modifier: Modifier = Modifier) {
+fun PlaceList(
+    nearbyPlaces: List<PlaceOfInterest>,
+    modifier: Modifier = Modifier
+) {
 
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
