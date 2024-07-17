@@ -24,7 +24,7 @@ This is an Android application that fetches nearby places and displays them on a
 ## How to get a Google Map API key? 👮 
 To generate an API, visit [Google Places](https://developers.google.com/maps/documentation/places/android-sdk/cloud-setup) and follow the instructions
 
-## Teaser 🎬
+## Screenshots
 -  **List view**
 <img src="img/list.png" height="500" />
 
