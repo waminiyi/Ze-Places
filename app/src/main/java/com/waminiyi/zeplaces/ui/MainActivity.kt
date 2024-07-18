@@ -63,25 +63,27 @@ class MainActivity : ComponentActivity() {
 
                     val places by placeViewModel.nearbyPlaces.collectAsState(initial = emptyList())
 
-                    ListingScreen(
-                        nearbyPlaces = places,
-                        currentLocation = placeViewModel.currentLocation,
-                        viewType = viewType,
-                        onViewSwitch = {
-                            viewType = when (viewType) {
-                                ViewType.List -> ViewType.Map
-                                ViewType.Map -> ViewType.List
+                    places?.let { placeOfInterests ->
+                        ListingScreen(
+                            nearbyPlaces = placeOfInterests,
+                            currentLocation = placeViewModel.currentLocation,
+                            viewType = viewType,
+                            onViewSwitch = {
+                                viewType = when (viewType) {
+                                    ViewType.List -> ViewType.Map
+                                    ViewType.Map -> ViewType.List
 
-                            }
-                        },
-                        selectedPlaceType = selectedPlaceType,
-                        onPlaceTypeChanged = {
-                            selectedPlaceType = it
-                            placeViewModel.fetchNearbyPlaces(placeType = getString(it.typeKey))
-                        },
-                        modifier = Modifier.padding(innerPadding)
+                                }
+                            },
+                            selectedPlaceType = selectedPlaceType,
+                            onPlaceTypeChanged = {
+                                selectedPlaceType = it
+                                placeViewModel.fetchNearbyPlaces(placeType = getString(it.typeKey))
+                            },
+                            modifier = Modifier.padding(innerPadding)
 
-                    )
+                        )
+                    }
                 }
             }
         }

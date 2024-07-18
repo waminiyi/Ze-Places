@@ -9,9 +9,9 @@ import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
 import com.waminiyi.zeplaces.domain.repositories.PlacesRepository
 import com.waminiyi.zeplaces.ui.utils.LocationTracker
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class PlacesViewModel(
@@ -20,11 +20,11 @@ class PlacesViewModel(
 ) : ViewModel() {
 
     private var _nearbyPlaces = MutableStateFlow<List<PlaceOfInterest>?>(null)
-     var currentLocation by mutableStateOf<Coordinates>(Coordinates(0.0, 0.0))
+     var currentLocation by mutableStateOf(Coordinates(0.0, 0.0))
 
 
-    val nearbyPlaces: Flow<List<PlaceOfInterest>>
-        get() = _nearbyPlaces.filterNotNull()
+    val nearbyPlaces: StateFlow<List<PlaceOfInterest>?>
+        get() = _nearbyPlaces.asStateFlow()
 
     init {
         viewModelScope.launch() {
