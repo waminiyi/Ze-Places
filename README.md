@@ -25,6 +25,9 @@ This is an Android application that fetches nearby places and displays them on a
 To generate an API, visit [Google Places](https://developers.google.com/maps/documentation/places/android-sdk/cloud-setup) and follow the instructions
 
 ## Teaser 🎬
+- **Video**
+<img src="img/teaser.gif" height="500" />
+
 -  **List view**
 <img src="img/list.png" height="500" />
 
