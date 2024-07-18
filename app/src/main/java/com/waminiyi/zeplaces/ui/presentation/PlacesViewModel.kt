@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
-import com.waminiyi.zeplaces.domain.model.PlaceType
 import com.waminiyi.zeplaces.domain.repositories.PlacesRepository
 import com.waminiyi.zeplaces.ui.utils.LocationTracker
 import kotlinx.coroutines.flow.Flow
@@ -40,7 +39,7 @@ class PlacesViewModel(
     }
 
     fun fetchNearbyPlaces(
-        placeType: PlaceType = PlaceType.RESTAURANT,
+        placeType: String = "restaurant",
         coordinates: Coordinates = currentLocation,
         radius: Int = 1500
     ) {

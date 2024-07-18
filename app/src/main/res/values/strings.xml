@@ -4,5 +4,13 @@
     <string name="show_list">Show list</string>
     <string name="show_map">Show map</string>
     <string name="google_maps_key">${MAPS_API_KEY}</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="atm">ATM</string>
+    <string name="gas_station">Gas</string>
+    <string name="bakery">Bakery</string>
+    <string name="restaurant_key">restaurant</string>
+    <string name="atm_key">atm</string>
+    <string name="gas_key">gas_station</string>
+    <string name="bakery_key">bakery</string>
 
 </resources>

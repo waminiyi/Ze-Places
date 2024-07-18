@@ -2,7 +2,6 @@ package com.waminiyi.zeplaces.domain.repositories
 
 import com.waminiyi.zeplaces.domain.model.Coordinates
 import com.waminiyi.zeplaces.domain.model.PlaceOfInterest
-import com.waminiyi.zeplaces.domain.model.PlaceType
 
 /**
  * Interface representing a repository for managing places of interest.
@@ -15,7 +14,7 @@ interface PlacesRepository {
      * @return A list of nearby places of interest.
      */
     suspend fun getNearbyPlaces(
-        placeType: PlaceType,
+        placeType: String,
         coordinates: Coordinates,
         radius: Int
     ): List<PlaceOfInterest>

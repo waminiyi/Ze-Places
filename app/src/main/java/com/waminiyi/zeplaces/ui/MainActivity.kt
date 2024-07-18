@@ -41,17 +41,6 @@ class MainActivity : ComponentActivity() {
             ZePlacesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-//                    var nearbyPlaces by remember { mutableStateOf(emptyList<PlaceOfInterest>()) }
-//                    LaunchedEffect(Unit) {
-//                        nearbyPlaces = placeRepository.getNearbyPlaces(
-//                            coordinates = Coordinates(
-//                                -33.8670522,
-//                                151.1957362
-//                            ),
-//                            radius = 1500,
-//                            placeType = PlaceType.RESTAURANT
-//                        )
-//                    }
                     val locationPermissions = rememberMultiplePermissionsState(
                         permissions = listOf(
                             android.Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -59,8 +48,7 @@ class MainActivity : ComponentActivity() {
                         )
                     )
 
-                    //1. when the app get launched for the first time
-                    LaunchedEffect(true){
+                    LaunchedEffect(true) {
                         locationPermissions.launchMultiplePermissionRequest()
                     }
                     val placeViewModel = koinViewModel<PlacesViewModel>()
@@ -89,13 +77,11 @@ class MainActivity : ComponentActivity() {
                         selectedPlaceType = selectedPlaceType,
                         onPlaceTypeChanged = {
                             selectedPlaceType = it
-                            placeViewModel.fetchNearbyPlaces(placeType = it)
+                            placeViewModel.fetchNearbyPlaces(placeType = getString(it.typeKey))
                         },
                         modifier = Modifier.padding(innerPadding)
 
                     )
-//                        .also { Log.d("places:", placeViewModel.nearbyPlaces.toList().toString()) }
-
                 }
             }
         }
