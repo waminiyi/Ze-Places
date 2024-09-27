@@ -7,7 +7,7 @@ This is an Android application that fetches nearby places and displays them on a
 
 - Fetches and displays nearby places.
 - View places in a list or on a map.
-- Filter my place type (restaurant, gas station,...)
+- Filter by place type (restaurant, gas station,...)
 - Intuitive and user-friendly interface.
 - Efficient data fetching and caching.
 
