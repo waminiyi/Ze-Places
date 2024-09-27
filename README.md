@@ -40,7 +40,7 @@ To generate an API, visit [Google Places](https://developers.google.com/maps/doc
 - [Jetpack Compose](https://developer.android.com/jetpack/compose) - UI toolkit for building native Android UI
 - [Koin](https://github.com/InsertKoinIO/koin) - Dependency injection
 - [Ktor](https://ktor.io) - Network requests
-- [Google Maps]([https://developers.google.com/maps/documentation/android-sdk/overview](https://developers.google.com/maps/documentation/android-sdk/maps-compose)) - Maps Compose Library
+- [Google Maps](https://developers.google.com/maps/documentation/android-sdk/maps-compose) - Maps Compose Library
 - [Google Play Services Location](https://developers.google.com/android/reference/com/google/android/gms/location/package-summary) - Location services
 - [Coil](https://coil-kt.github.io/coil/) - Image loading library for Android backed by Kotlin Coroutines
 - [Jetpack Compose Permissions](https://google.github.io/accompanist/permissions/) - Android runtime permissions support for Jetpack Compose
